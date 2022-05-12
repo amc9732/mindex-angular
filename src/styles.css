@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+/* Application-wide Styles */
+* {
+  font-family: Roboto, "Helvetica Neue", sans-serif
+}
+button, .mat-dialog-title  {
+  text-transform: uppercase;
+}
+.mat-dialog-title {
+  color: #369;
+}
+.mat-dialog-actions {
+  justify-content: space-around;
+}
+mat-form-field.comp-span div.mat-form-field-prefix,
+mat-form-field.comp-span div.mat-form-field-suffix {
+  top: 0;
+}

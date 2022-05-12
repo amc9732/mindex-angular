@@ -15,12 +15,19 @@ import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatDialogModule} from '@angular/material/dialog';
+import {EditModalComponent} from './edit-modal/edit-modal.component';
+import {DeleteModalComponent} from './delete-modal/delete-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    EditModalComponent,
+    DeleteModalComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,10 @@ import {MatButtonModule} from '@angular/material/button';
     MatInputModule,
     MatMenuModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule,
+    FlexLayoutModule,
+    MatDialogModule
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]

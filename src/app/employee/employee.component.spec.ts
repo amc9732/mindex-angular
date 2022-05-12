@@ -2,6 +2,9 @@ import {async, TestBed} from '@angular/core/testing';
 import {Component} from '@angular/core';
 
 import {EmployeeComponent} from './employee.component';
+import {EmployeeService} from '../employee.service';
+import {HttpClient, HttpHandler} from '@angular/common/http';
+import {MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 
 @Component({selector: 'app-mat-card', template: ''})
 class CardComponent {
@@ -36,6 +39,14 @@ describe('EmployeeComponent', () => {
         CardSubtitleComponent,
         CardContentComponent
       ],
+
+      providers: [
+        EmployeeService,
+        HttpClient,
+        HttpHandler,
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogModule, useValue: {} }
+      ]
     }).compileComponents();
   }));
 

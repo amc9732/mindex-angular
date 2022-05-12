@@ -1,0 +1,13 @@
+.employee-title {
+  color: #369;
+}
+.direct-reports-list {
+  margin-top: 8px;
+}
+mat-list-item {
+  background-color: #F8F9FA;
+}
+.list-item-title {
+  color: #FFFFFF;
+  background-color: #6C757D;
+}

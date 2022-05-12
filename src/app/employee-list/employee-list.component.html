@@ -1,5 +1,8 @@
-<mat-grid-list class="employee-list" cols="4">
-  <mat-grid-tile *ngFor="let emp of employees">
-    <app-employee [employee]="emp"></app-employee>
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="employee-list" fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="16px grid">
+  <div *ngFor="let emp of employees">
+    <app-employee [employee]="emp"
+                  (editReport)="onEditReport($event)"
+                  (deleteReport)="onDeleteReport($event)">
+    </app-employee>
+  </div>
+</div>

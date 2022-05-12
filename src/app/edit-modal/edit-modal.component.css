@@ -1,0 +1,24 @@
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.mat-raised-button {
+  color: #FFFFFF;
+  background-color: #6C757D;
+}
+.comp-input {
+  text-align: right;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+mat-form-field {
+  min-width: 240px;
+}

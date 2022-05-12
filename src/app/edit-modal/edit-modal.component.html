@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Update Compensation</h1>
+<mat-dialog-content>
+  <form class="edit-form">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput disabled [value]="data.firstName" name="first" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput disabled [value]="data.lastName" name="last" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Position</mat-label>
+      <input matInput disabled [value]="data.position" name="position" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" floatLabel="always" class="comp-span">
+      <mat-label>Compensation</mat-label>
+      <input
+        required
+        matInput
+        type="number"
+        [value]="data.compensation ? data.compensation.toString(): null"
+        name="compensation"
+        class="comp-input"
+        placeholder="0"
+        #compensationInput
+      />
+      <span matPrefix>$&nbsp;</span>
+      <span matSuffix>.00</span>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="[data, compensationInput.value]">Save</button>
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

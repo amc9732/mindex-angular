@@ -1,12 +1,32 @@
-<mat-card class="employee">
+<mat-card class="employee mat-elevation-z8">
   <mat-card-header>
-    <mat-card-title>{{employee.lastName}}, {{employee.firstName}}</mat-card-title>
-    <mat-card-subtitle>{{employee.id}}</mat-card-subtitle>
+    <mat-card-title class="employee-title">
+      {{ employee.firstName }} {{ employee.lastName }}, {{ employee.position }}
+    </mat-card-title>
+    <mat-card-subtitle>
+      Employee ID: {{ employee.id }} Total Reports: {{ allSubordinates.length }}
+    </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <dl>
-      <dt>Job Title</dt>
-      <dd>{{employee.position}}</dd>
-    </dl>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-list class="direct-reports-list">
+      <mat-list-item class="list-item-title"><p>Direct Reports:</p></mat-list-item>
+      <mat-list-item *ngIf="directReports.length == 0">
+        <p>This employee has no reports.</p>
+      </mat-list-item>
+      <mat-list-item *ngFor="let report of directReports; last as last">
+        <p mat-line>
+          {{ report.firstName }} {{ report.lastName }}, {{ report.position }}
+        </p>
+        <button mat-icon-button (click)="editReport.emit(report)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteReport.emit(report)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+      </mat-list-item>
+
+    </mat-list>
   </mat-card-content>
 </mat-card>

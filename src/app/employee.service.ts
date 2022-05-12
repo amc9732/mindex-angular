@@ -1,13 +1,14 @@
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {from, Observable, throwError} from 'rxjs';
-import {catchError, flatMap} from 'rxjs/operators';
+import {from, Observable, Subject, throwError} from 'rxjs';
+import {catchError, flatMap, tap} from 'rxjs/operators';
 
 import {Employee} from './employee';
 
 @Injectable()
 export class EmployeeService {
   private url = '/api/employees';
+  employeeEditEvent = new Subject<Employee>();
 
   constructor(private http: HttpClient) {
   }
